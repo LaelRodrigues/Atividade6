@@ -31,22 +31,26 @@ int main(){
 	cout << "Digite uma palavra: ";
 	getline(cin, palindromo);
 
-
 	Pilha <char> pilha(palindromo.size());
 
-	//remover espacos da string
-	for (int i = 0; i < (int)palindromo.size(); i++) {
-		if (palindromo[i] == ' ' || palindromo[i] == '\t' || palindromo[i] == '\n') {
+	//string que armazena os caracteres validos
+	string caracteres = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"};
+
+	int cont;
+
+	//descarta da string palidromo quaquer caractere que nao estaja no string acima 
+	for(int i = 0; i < (int)palindromo.size(); i++) {
+		cont = 0;
+		for(int j = 0; j < 62; j++) {
+			if(palindromo[i] == caracteres[j]) {
+				cont++;
+			}
+		}
+		if(cont == 0){
 			palindromo.erase(i, 1);
 			i--;
 		}
-	}
 
-	//remover sinais de pontuacao da string 
-	for(int i = 0; i < (int)palindromo.size(); i++) {
-		if (ispunct(palindromo[i])) {
-			palindromo.erase(i, 1);
-		}
 	}
 
 	//converter para minusculo os caracteres da string

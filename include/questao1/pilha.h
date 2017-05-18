@@ -52,7 +52,7 @@ class Pilha {
 
 
 /**
- * @param  n Tamanho maximo da pilha 
+ * @param maximo Tamanho maximo da pilha 
  */
 template <typename T>
 Pilha <T>:: Pilha(int maximo) {
