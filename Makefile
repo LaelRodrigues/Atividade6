@@ -15,10 +15,14 @@ CFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)
 
 .PHONY: all init clean doxy debug doc
 
-all: init questao1
+all: init questao1 questao2
 
 debug: CFLAGS += -g -O0
 debug: all
+
+init:
+	@mkdir -p $(OBJ_DIR)/questao1
+	@mkdir -p $(OBJ_DIR)/questao2
 
 
 questao1: CFLAGS+= -I$(INC_DIR)/questao1
@@ -31,6 +35,18 @@ questao1: $(OBJ_DIR)/questao1/main.o
 	@echo "============="
 
 $(OBJ_DIR)/questao1/main.o: $(SRC_DIR)/questao1/main.cpp $(INC_DIR)/questao1/pilha.h
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+questao2: CFLAGS+= -I$(INC_DIR)/questao2
+questao2: $(OBJ_DIR)/questao2/main.o
+	@echo "============="
+	@echo "Ligando o alvo $@"
+	@echo "============="
+	$(CC) $(CFLAGS) -o $(BIN_DIR)/lista $^
+	@echo "+++ [Executavel 'lista' criado em $(BIN_DIR)] +++"
+	@echo "============="
+
+$(OBJ_DIR)/questao2/main.o: $(SRC_DIR)/questao2/main.cpp $(INC_DIR)/questao2/lista.h
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 doxy:
