@@ -2,9 +2,9 @@
  * @file	main.cpp
  * @brief	Codigo fonte principal do programa para testar as
  *			operacaoes referente a lista duplamente encadeada
- * @author	Everton Cavalcante (everton@dimap.ufrn.br)
- * @since	25/04/2017
- * @date	25/04/2017
+ * @author	LaelRodrigues (laelRodrigues7@gmail.com)
+ * @since	16/04/2017
+ * @date	21/04/2017
  */
 
 #include <iostream>
