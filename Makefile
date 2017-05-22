@@ -15,7 +15,7 @@ CFLAGS = -Wall -pedantic -ansi -std=c++11 -I. -I$(INC_DIR)
 
 .PHONY: all init clean doxy debug doc
 
-all: init questao1 questao2
+all: init questao1 questao2 questao3
 
 debug: CFLAGS += -g -O0
 debug: all
@@ -23,10 +23,11 @@ debug: all
 init:
 	@mkdir -p $(OBJ_DIR)/questao1
 	@mkdir -p $(OBJ_DIR)/questao2
+	@mkdir -p $(OBJ_DIR)/questao3
 
 
 questao1: CFLAGS+= -I$(INC_DIR)/questao1
-questao1: $(OBJ_DIR)/questao1/main.o
+questao1: $(OBJ_DIR)/questao1/main1.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -34,11 +35,11 @@ questao1: $(OBJ_DIR)/questao1/main.o
 	@echo "+++ [Executavel 'palindromo' criado em $(BIN_DIR)] +++"
 	@echo "============="
 
-$(OBJ_DIR)/questao1/main.o: $(SRC_DIR)/questao1/main.cpp $(INC_DIR)/questao1/pilha.h
+$(OBJ_DIR)/questao1/main1.o: $(SRC_DIR)/questao1/main1.cpp $(INC_DIR)/questao1/pilha.h
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 questao2: CFLAGS+= -I$(INC_DIR)/questao2
-questao2: $(OBJ_DIR)/questao2/main.o
+questao2: $(OBJ_DIR)/questao2/main2.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
@@ -46,9 +47,26 @@ questao2: $(OBJ_DIR)/questao2/main.o
 	@echo "+++ [Executavel 'lista' criado em $(BIN_DIR)] +++"
 	@echo "============="
 
-$(OBJ_DIR)/questao2/main.o: $(SRC_DIR)/questao2/main.cpp $(INC_DIR)/questao2/lista.h
+$(OBJ_DIR)/questao2/main2.o: $(SRC_DIR)/questao2/main2.cpp $(INC_DIR)/questao2/lista.h
 	$(CC) -c $(CFLAGS) -o $@ $<
 
+questao3: CFLAGS+= -I$(INC_DIR)/questao3
+questao3: $(OBJ_DIR)/questao3/aluno.o $(OBJ_DIR)/questao3/turma.o $(OBJ_DIR)/questao3/main3.o 
+	@echo "============="
+	@echo "Ligando o alvo $@"
+	@echo "============="
+	$(CC) $(CFLAGS) -o $(BIN_DIR)/turmas $^
+	@echo "+++ [Executavel 'turmas' criado em $(BIN_DIR)] +++"
+	@echo "============="
+
+$(OBJ_DIR)/questao3/aluno.o: $(SRC_DIR)/questao3/aluno.cpp $(INC_DIR)/questao3/aluno.h
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+$(OBJ_DIR)/questao3/turma.o: $(SRC_DIR)/questao3/turma.cpp $(INC_DIR)/questao3/turma.h
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+$(OBJ_DIR)/questao3/main3.o: $(SRC_DIR)/questao3/main3.cpp
+	$(CC) -c $(CFLAGS) -o $@ $<
 doxy:
 	doxygen -g
 
