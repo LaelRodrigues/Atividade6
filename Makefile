@@ -24,6 +24,7 @@ init:
 	@mkdir -p $(OBJ_DIR)/questao1
 	@mkdir -p $(OBJ_DIR)/questao2
 	@mkdir -p $(OBJ_DIR)/questao3
+	@mkdir -p $(BIN_DIR)
 
 
 questao1: CFLAGS+= -I$(INC_DIR)/questao1
