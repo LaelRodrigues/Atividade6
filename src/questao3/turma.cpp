@@ -2,8 +2,8 @@
  * @file	turma.cpp
  * @brief	Implementacao dos metodos da classe Turma
  * @author	Lael Rodrigues (laelrodrigues7@gmail.com)
- * @since	20/04/2017
- * @date	21/04/2017
+ * @since	20/05/2017
+ * @date	21/05/2017
  */
 
 #include "turma.h"

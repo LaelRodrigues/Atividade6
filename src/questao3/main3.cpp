@@ -1,7 +1,7 @@
 /**
  * @file	main3.cpp
  * @brief	Codigo fonte principal do programa para testar as
- *			operacaoes referente a turma de alunos
+ *			operacaoes referente classe turma e aluno
  * @author	LaelRodrigues (laelRodrigues7@gmail.com)
  * @since	21/05/2017
  * @date	21/05/2017

@@ -2,8 +2,8 @@
  * @file	aluno.cpp
  * @brief	Implementacao dos metodos da classe Aluno
  * @author	Lael Rodrigues (laelrodrigues7@gmail.com)
- * @since	21/04/2017
- * @date	21/04/2017
+ * @since	21/05/2017
+ * @date	21/05/2017
  */
 
 #include <string>

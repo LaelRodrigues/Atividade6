@@ -18,16 +18,16 @@ using std::endl;
 
 /** 
  * @struct  Node
- * @brief	Tipo estrutura que representa  no como o campo dado
- *			generico e dois ponteiros genericos proximo e anterior 
+ * @brief	Tipo estrutura que  comtem um campo dado generico
+ *			e mais dois campos do tipo ponteiros genericos proximo e anterior 
  *			que apontam para nos 
  */
 template <typename T>
 struct Node {
 		
-	T dado;
-	Node<T> *proximo = NULL;
-	Node<T> *anterior = NULL;
+	T dado;						/**< Dado */
+	Node<T> *proximo = NULL;	/**< Proximo */
+	Node<T> *anterior = NULL;	/**< Anterior */
 		
 };
 
@@ -35,9 +35,8 @@ struct Node {
  * @class 	Lista lista.h
  * @brief 	Classe que representa um lista duplamente encadeada
  * @details Os atributos da lista sao inicio e fim, que sao ponteiros
- *			do tipo Node que apontam para a cabeca e calda da lista
- * 			respectivamente
- *		
+ *			genericos do tipo Node que apontam para a cabeca e calda 
+ * 			da lista respectivamente		
  */
 template <typename T> 
 class Lista {
@@ -54,7 +53,7 @@ class Lista {
 		~Lista();
 
 		/** @brief Insere elementos ordenados na lista */
-		void insereOrdenado(T elemento);
+		void inserirOrdenado(T elemento);
 
 		/** @brief Acessa elemntos da lista */
 		Node<T>* acessar(T elemento);
@@ -90,7 +89,7 @@ Lista <T>:: ~Lista() {
   * @param elemento Elemento a ser adicionado a lista
   */
 template <typename T>
-void  Lista <T> :: insereOrdenado(T elemento) {
+void  Lista <T> :: inserirOrdenado(T elemento) {
 
 	Node<T> *iterador = inicio;
 	Node<T> *novoNode = new Node<T>;
@@ -167,7 +166,7 @@ Node<T>* Lista<T> ::acessar(T elemento){
 
 /**
  * @details Caso o usuario tente remover um elemento que nao esteja 
- *			ou lista estaja vazia programa exibi uma messagem de erro
+ *			na lista ou a lista estaja vazia programa exibi uma messagem de erro
  * @param	elemento Elemento a ser removido da lista			
  */
 template <typename T>

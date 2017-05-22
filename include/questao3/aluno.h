@@ -3,8 +3,8 @@
  * @brief	Definicao da classe Aluno para representar os 
  * 			dados de uma aluno
  * @author	Lael Rodrigues (laelrodrigues7@gmail.com)
- * @since	20/04/2017
- * @date	21/04/2017
+ * @since	20/05/2017
+ * @date	21/05/2017
  */
 
 
@@ -18,7 +18,7 @@ using std::string;
  * @class 	Aluno aluno.h
  * @brief 	Classe que representa os dados de um aluno
  * @details Os atributos de um Aluno sao: matricula, nome, 
- *			totalFaltas e nota
+ *			total de faltas e nota
  */
 class Aluno {
 	private:

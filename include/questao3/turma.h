@@ -22,8 +22,8 @@ using std::string;
 
 /** 
  * @struct  Node
- * @brief	Tipo estrutura que comte campo dados com as informacoes 
- *			dos Aluno e mais dois campos do tipo ponteiro que apontam
+ * @brief	Tipo estrutura que contem os campo dados com as informacoes 
+ *			do Aluno e mais dois campos do tipo ponteiro que apontam
  *			para nos
  */
 
